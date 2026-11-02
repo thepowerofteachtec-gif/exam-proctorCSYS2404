@@ -177,7 +177,7 @@ function buildDots() {
   data.questions.forEach((q, i) => {
     const d = document.createElement('div');
     d.className = 'dot';
-    d.onclick = () => { saveCurrent(); idx = i; render(); };
+    d.style.cursor = 'default';   // progress indicator only — no jumping back
     dots.appendChild(d);
   });
 }
@@ -216,10 +216,13 @@ function render() {
     card.appendChild(note);
   }
   host.appendChild(card);
-  prev.style.display = idx === 0 ? 'none' : '';
+  const answered = answers[q.id] != null;
+  prev.style.display = 'none';                 // forward-only: no going back
   const last = idx === data.questions.length - 1;
   next.style.display = last ? 'none' : '';
+  next.disabled = !answered;                   // must answer before moving on
   submitBtn.style.display = last ? '' : '';
+  submitBtn.disabled = last && !answered;      // must answer the last one before submitting
   progText.textContent = `${Object.keys(answers).length} of ${data.questions.length} answered`;
   refreshDots();
 }
@@ -270,8 +273,13 @@ render = function () {
   enterQuestion(q.id);
 };
 
-prev.onclick = () => { saveCurrent(); idx = Math.max(0, idx - 1); render(); };
-next.onclick = () => { saveCurrent(); idx = Math.min(data.questions.length - 1, idx + 1); render(); };
+prev.onclick = () => {};   // disabled: no going back
+next.onclick = () => {
+  if (answers[data.questions[idx].id] == null) return;   // can't advance unanswered
+  saveCurrent();
+  idx = Math.min(data.questions.length - 1, idx + 1);
+  render();
+};
 submitBtn.onclick = () => {
   const unanswered = data.questions.length - Object.keys(answers).length;
   confirmText.textContent = unanswered > 0
