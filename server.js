@@ -142,6 +142,21 @@ app.post('/submit', (req, res) => {
   pushOverview();
 });
 
+// Integrity heartbeat: the exam page reports whether its own monitoring looks
+// intact. If an extension has tampered with core browser APIs, this flags once.
+app.post('/alive', (req, res) => {
+  const { token, integrity } = req.body || {};
+  const a = getAttemptByToken(token);
+  if (a && a.status !== 'submitted') {
+    db.prepare('UPDATE attempts SET last_seen = ? WHERE id = ?').run(now(), a.id);
+    if (integrity && integrity.ok === false) {
+      const flags = JSON.parse(a.flags || '[]');
+      if (!flags.some(f => f.type === 'monitoring_blocked')) recordEvent(a, 'monitoring_blocked', integrity);
+    }
+  }
+  res.status(204).end();
+});
+
 app.get('/config', (_, res) => res.json({
   title: examMod.exam.title,
   needsPassphrase: !!examMod.exam.passphrase,
