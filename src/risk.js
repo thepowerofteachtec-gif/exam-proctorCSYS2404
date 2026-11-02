@@ -13,7 +13,8 @@ const WEIGHTS = {
   ip_change: 5,
   rapid_answer: 3,       // answered faster than humanly reasonable
   idle_then_burst: 6,    // long idle then a sudden complete answer
-  resize_small: 1
+  resize_small: 1,
+  monitoring_blocked: 6  // the page's own integrity check reports tampering/blocking
 };
 
 function weightFor(type, detail) {
@@ -33,7 +34,8 @@ function label(type) {
     ip_change: 'Network address changed mid-exam',
     rapid_answer: 'Answered unusually fast',
     idle_then_burst: 'Idle, then a sudden complete answer',
-    resize_small: 'Shrank the window'
+    resize_small: 'Shrank the window',
+    monitoring_blocked: 'Monitoring may be blocked or tampered'
   }[type] || type;
 }
 
