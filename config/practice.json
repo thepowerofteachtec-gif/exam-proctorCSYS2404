@@ -1,0 +1,23 @@
+{
+  "id": "practice-quiz-2026",
+  "title": "Practice Quiz",
+  "durationMinutes": 10,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "passphrase": "",
+  "allowRetakes": true,
+  "showScore": true,
+  "instructions": "This is a practice quiz so you can get used to the system before the real exam. You can retake it as many times as you like, and you'll see your score at the end. Activity is logged, just like the real exam.",
+  "questions": [
+    { "id": "p1", "type": "mcq", "points": 1, "text": "To move to the next question in this quiz, which button do you use?",
+      "options": [{"id":"a","text":"The browser's back button"},{"id":"b","text":"The Next button at the bottom"},{"id":"c","text":"Refresh the page"},{"id":"d","text":"Close the tab"}], "correct": "b" },
+    { "id": "p2", "type": "true_false", "points": 1, "text": "You can revisit an earlier question using the Back button before you submit.",
+      "options": [{"id":"t","text":"True"},{"id":"f","text":"False"}], "correct": "t" },
+    { "id": "p3", "type": "mcq", "points": 1, "text": "What happens when the timer reaches zero?",
+      "options": [{"id":"a","text":"Nothing, you keep going"},{"id":"b","text":"The quiz submits automatically"},{"id":"c","text":"Your answers are deleted"},{"id":"d","text":"You get extra time"}], "correct": "b" },
+    { "id": "p4", "type": "true_false", "points": 1, "text": "During the real exam you should stay on the exam page and not switch to other tabs.",
+      "options": [{"id":"t","text":"True"},{"id":"f","text":"False"}], "correct": "t" },
+    { "id": "p5", "type": "mcq", "points": 1, "text": "If you finish early, how do you hand in your answers?",
+      "options": [{"id":"a","text":"Email your instructor"},{"id":"b","text":"Click Submit and confirm"},{"id":"c","text":"Just close the browser"},{"id":"d","text":"Wait for time to run out"}], "correct": "b" }
+  ]
+}

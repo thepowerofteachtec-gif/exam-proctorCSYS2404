@@ -1,0 +1,201 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Proctoring Dashboard</title><link rel=stylesheet href="/static/shared.css"><link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+  .head { position: sticky; top: env(safe-area-inset-top,0); z-index: 10; background: var(--panel);
+    border-bottom: 1px solid var(--line); padding: 1rem 1.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  body::before { content:""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top,0); background: var(--panel); z-index: 11; }
+  .head h1 { font-size: 1.1rem; margin: 0; font-weight: 650; }
+  .stats { display: flex; gap: 1.4rem; }
+  .stat { text-align: center; }
+  .stat .n { font-size: 1.4rem; font-weight: 700; font-family: var(--mono); }
+  .stat .l { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .stat.flag .n { color: var(--danger); }
+  .wrap { padding: 1.2rem 1.4rem; max-width: 80rem; margin: 0 auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; padding: .6rem .7rem; border-bottom: 1px solid var(--line); }
+  td { padding: .7rem; border-bottom: 1px solid var(--line); font-size: .9rem; }
+  tr.row { cursor: pointer; }
+  tr.row:hover { background: var(--panel); }
+  .who { font-weight: 600; }
+  .who .id { color: var(--faint); font-weight: 400; font-size: .78rem; }
+  .live { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; }
+  .ledot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--faint); }
+  .live.on .ledot { background: var(--ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 25%, transparent); }
+  .bar { height: .4rem; background: var(--line); border-radius: 99px; overflow: hidden; width: 7rem; }
+  .bar > i { display: block; height: 100%; background: var(--accent); }
+  .risk { font-family: var(--mono); font-weight: 700; }
+  .risk.lo { color: var(--ok); } .risk.mid { color: var(--warn); } .risk.hi { color: var(--danger); }
+  .st { font-size: .74rem; }
+  .st.prog { color: var(--accent); } .st.sub { color: var(--muted); }
+  .drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(28rem, 100%); background: var(--panel);
+    border-left: 1px solid var(--line); transform: translateX(100%); transition: transform .22s ease; z-index: 40; overflow-y: auto;
+    padding-top: env(safe-area-inset-top,0); }
+  .drawer.open { transform: none; }
+  .drawer .dhead { padding: 1.3rem 1.4rem; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-start; }
+  .drawer .dbody { padding: 1.3rem 1.4rem; }
+  .close { background: none; border: 0; color: var(--muted); font-size: 1.5rem; line-height: 1; }
+  .kv { display: flex; justify-content: space-between; padding: .45rem 0; border-bottom: 1px solid var(--line); font-size: .88rem; }
+  .kv span:first-child { color: var(--muted); }
+  .flagitem { display: flex; justify-content: space-between; gap: .8rem; padding: .6rem .8rem; background: var(--bg); border: 1px solid var(--line);
+    border-left: 3px solid var(--warn); border-radius: 6px; margin-bottom: .5rem; font-size: .85rem; }
+  .flagitem.hi { border-left-color: var(--danger); }
+  .flagitem .t { color: var(--faint); font-size: .75rem; font-family: var(--mono); }
+  .sechead { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin: 1.5rem 0 .7rem; }
+  .login { min-height: 100vh; display: grid; place-items: center; }
+  .login .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; width: min(22rem, 90vw); }
+  .login input { width: 100%; background: var(--bg); border: 1px solid var(--line); color: var(--ink); padding: .65rem; border-radius: 8px; margin: 1rem 0; }
+  .empty { text-align: center; color: var(--faint); padding: 4rem 1rem; }
+</style></head><body>
+<div id="app"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+let token = new URLSearchParams(location.search).get('t');
+let socket, state = null, openId = null;
+const app = document.getElementById('app');
+const fmtTime = ts => new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+const riskClass = r => r >= 20 ? 'hi' : r >= 10 ? 'mid' : 'lo';
+
+function loginView() {
+  app.innerHTML = `<div class="login"><div class="card">
+    <div class="brand"></div>
+    <h1 style="margin:0 0 .3rem">Proctoring dashboard</h1>
+    <p style="color:var(--muted);font-size:.88rem;margin:0">Instructor sign-in</p>
+    <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+    <button class="btn" style="width:100%" id="in">Sign in</button>
+    <div id="e" style="color:var(--danger);font-size:.85rem;margin-top:.8rem;min-height:1rem"></div>
+  </div></div>`;
+  document.getElementById('in').onclick = async () => {
+    const r = await fetch('/api/instructor/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw.value }) });
+    const d = await r.json();
+    if (d.error) return document.getElementById('e').textContent = d.error;
+    token = d.token; connect();
+  };
+  document.getElementById('pw').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('in').click(); });
+}
+
+function connect() {
+  socket = io();
+  socket.emit('instructor:join', { token });
+  socket.on('denied', loginView);
+  socket.on('overview', o => { state = o; renderMain(); });
+  socket.on('flag', f => {
+    if (state) { const s = state.students.find(x => x.id === f.attemptId); if (s) s.riskScore = f.riskScore; renderMain(); }
+    if (openId === f.attemptId) loadDrawer(openId);
+  });
+  socket.on('progress', p => { if (state) { const s = state.students.find(x => x.id === p.attemptId); if (s) { s.answered = p.answered; s.currentQ = p.currentQ; } renderMain(); } });
+}
+
+function renderMain() {
+  if (!state) return;
+  const s = state.stats;
+  const rows = state.students.map(a => {
+    const pct = a.totalQ ? Math.round(a.answered / a.totalQ * 100) : 0;
+    const scoreTxt = a.status === 'submitted' && a.score != null ? `${a.score}/${a.maxScore}` : '—';
+    return `<tr class="row" data-id="${a.id}">
+      <td><div class="who">${esc(a.name)}<div class="id">${esc(a.studentId)}</div></div></td>
+      <td><span class="live ${a.connected ? 'on' : ''}"><span class="ledot"></span>${a.connected ? 'Live' : 'Away'}</span></td>
+      <td><span class="st ${a.status === 'submitted' ? 'sub' : 'prog'}">${a.status === 'submitted' ? 'Submitted' : 'Q' + ((a.currentQ || 0) + 1)}</span></td>
+      <td><div class="bar"><i style="width:${pct}%"></i></div><div style="font-size:.72rem;color:var(--faint);margin-top:.25rem">${a.answered}/${a.totalQ}</div></td>
+      <td><span class="risk ${riskClass(a.riskScore)}">${a.riskScore}</span></td>
+      <td>${scoreTxt}</td></tr>`;
+  }).join('');
+  app.innerHTML = `
+    <div class="head">
+      <h1 style="display:inline-flex;align-items:center"><span class="brand-sm"></span>${esc(state.examTitle)}</h1>
+      <div class="stats">
+        <div class="stat"><div class="n">${s.inProgress}</div><div class="l">In progress</div></div>
+        <div class="stat"><div class="n">${s.submitted}</div><div class="l">Submitted</div></div>
+        <div class="stat flag"><div class="n">${s.flagged}</div><div class="l">Flagged</div></div>
+        <button class="btn ghost" id="exportBtn" style="align-self:center">Download results (CSV)</button>
+      </div>
+    </div>
+    <div class="wrap">
+      ${state.students.length ? `<table><thead><tr>
+        <th>Student</th><th>Status</th><th>Position</th><th>Progress</th><th>Risk</th><th>Score</th>
+      </tr></thead><tbody>${rows}</tbody></table>`
+      : `<div class="empty">No students have launched the exam yet.</div>`}
+    </div>
+    <div class="drawer ${openId ? 'open' : ''}" id="drawer"></div>`;
+  document.querySelectorAll('tr.row').forEach(tr => tr.onclick = () => { openId = tr.dataset.id; loadDrawer(openId); });
+  const ex = document.getElementById('exportBtn');
+  if (ex) ex.onclick = () => window.open('/api/instructor/export.csv?t=' + token, '_blank');
+  if (openId) loadDrawer(openId);
+}
+
+async function loadDrawer(id) {
+  const r = await fetch('/api/instructor/attempt/' + id + '?t=' + token);
+  const d = await r.json();
+  if (d.error) return;
+  const a = d.attempt;
+  const flags = (a.flags || []).slice().reverse();
+  const drawer = document.getElementById('drawer');
+  if (!drawer) return;
+  drawer.classList.add('open');
+  const recent = d.events.slice(-40).reverse();
+  drawer.innerHTML = `
+    <div class="dhead">
+      <div><div style="font-weight:650;font-size:1.1rem">${esc(a.name)}</div>
+      <div style="color:var(--faint);font-size:.8rem">${esc(a.studentId)}</div></div>
+      <button class="close" id="closeD">&times;</button>
+    </div>
+    <div class="dbody">
+      <div class="kv"><span>Risk score</span><span class="risk ${riskClass(a.riskScore)}">${a.riskScore}</span></div>
+      <div class="kv"><span>Status</span><span>${a.status === 'submitted' ? 'Submitted (' + (a.submitReason || '') + ')' : 'In progress'}</span></div>
+      <div class="kv"><span>Connection</span><span>${a.connected ? 'Live' : 'Away'}</span></div>
+      <div class="kv"><span>Last seen</span><span>${a.lastSeen ? agoText(a.lastSeen) : '—'}</span></div>
+      <div class="kv"><span>Browser</span><span>${esc(a.browser || '—')}</span></div>
+      <div class="kv"><span>Answered</span><span>${a.answered}/${a.totalQ}</span></div>
+      ${a.score != null ? `<div class="kv"><span>Score</span><span>${a.score}/${a.maxScore}</span></div>` : ''}
+      <div class="kv"><span>First IP</span><span style="font-family:var(--mono);font-size:.8rem">${esc(a.firstIp || '—')}</span></div>
+      <div class="kv"><span>Last IP</span><span style="font-family:var(--mono);font-size:.8rem">${esc(a.lastIp || '—')}</span></div>
+
+      ${d.pattern ? `<div class="sechead">Performance pattern</div>
+      <div class="kv"><span>Accuracy</span><span>${d.pattern.correct}/${d.pattern.answered} correct (${d.pattern.accuracy}%)</span></div>
+      <div class="kv"><span>Avg time / question</span><span>${d.pattern.avgTimeMs ? (d.pattern.avgTimeMs/1000).toFixed(1)+'s' : '—'}</span></div>
+      ${d.pattern.fastCorrect ? `<div class="kv"><span>Correct in under 5s</span><span>${d.pattern.fastCorrect}</span></div>` : ''}
+      <div style="font-family:var(--mono);letter-spacing:.1em;margin:.6rem 0;word-break:break-all">${d.pattern.sequence.replace(/C/g,'<span style="color:var(--ok)">\u2713</span>').replace(/X/g,'<span style="color:var(--danger)">\u2717</span>').replace(/·/g,'<span style="color:var(--faint)">\u00b7</span>')}</div>` : ''}
+
+      <div class="sechead">Integrity flags (${flags.length})</div>
+      ${flags.length ? flags.map(f => `<div class="flagitem ${f.weight >= 8 ? 'hi' : ''}">
+        <span>${esc(f.label)}</span><span class="t">${fmtTime(f.ts)}</span></div>`).join('')
+        : '<div style="color:var(--faint);font-size:.85rem">No flags raised.</div>'}
+
+      ${d.review ? `<div class="sechead">Per-question answers</div>
+      <table style="width:100%;border-collapse:collapse;font-size:.82rem">
+        ${d.review.map(r => `<tr style="border-bottom:1px solid var(--line)">
+          <td style="padding:.4rem .3rem;color:var(--faint);width:1.6rem">${r.index}</td>
+          <td style="padding:.4rem .3rem">${r.answered ? esc(r.studentAnswer) : '<i style="color:var(--faint)">blank</i>'}
+            <span style="color:var(--faint)">\u2192 ${esc(r.correctAnswer)}</span></td>
+          <td style="padding:.4rem .3rem;text-align:right;white-space:nowrap">${!r.answered ? '' : r.correct ? '<span style="color:var(--ok)">\u2713</span>' : '<span style="color:var(--danger)">\u2717</span>'} <span style="color:var(--faint)">${r.timeMs ? (r.timeMs/1000).toFixed(0)+'s' : ''}</span></td>
+        </tr>`).join('')}
+      </table>
+      <button class="btn ghost" style="width:100%;margin-top:1rem" id="reportBtn">Open full report (printable)</button>
+      <button class="btn ghost" style="width:100%;margin-top:.6rem" id="respBtn">Download all responses (CSV)</button>` : ''}
+
+      <div class="sechead">Activity log</div>
+      ${recent.map(e => `<div class="flagitem" style="border-left-color:var(--line)">
+        <span>${esc(e.label)}${e.qid ? ' · ' + e.qid : ''}</span><span class="t">${fmtTime(e.ts)}</span></div>`).join('') || '<div style="color:var(--faint);font-size:.85rem">No activity yet.</div>'}
+
+      ${a.status !== 'submitted' ? `<button class="btn danger" style="width:100%;margin-top:1.5rem" id="forceSubmit">Force submit</button>` : ''}
+    </div>`;
+  document.getElementById('closeD').onclick = () => { openId = null; drawer.classList.remove('open'); };
+  const fs = document.getElementById('forceSubmit');
+  if (fs) fs.onclick = async () => { await fetch('/api/instructor/force-submit/' + id + '?t=' + token, { method: 'POST' }); };
+  const rb = document.getElementById('reportBtn');
+  if (rb) rb.onclick = () => window.open('/api/instructor/report/' + id + '?t=' + token, '_blank');
+  const resp = document.getElementById('respBtn');
+  if (resp) resp.onclick = () => window.open('/api/instructor/responses.csv?t=' + token, '_blank');
+}
+
+function agoText(ts) {
+  const s = Math.max(0, Math.round((Date.now() - ts) / 1000));
+  if (s < 5) return 'just now';
+  if (s < 60) return s + 's ago';
+  const m = Math.floor(s / 60); if (m < 60) return m + 'm ago';
+  return Math.floor(m / 60) + 'h ago';
+}
+function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+if (token) connect(); else loginView();
+</script></body></html>

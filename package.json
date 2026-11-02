@@ -1,0 +1,20 @@
+{
+  "name": "exam-proctor-standalone",
+  "version": "1.0.0",
+  "description": "Standalone proctored exam site - students click a link and take the exam",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --no-warnings --env-file-if-exists=.env server.js",
+    "dev": "node --no-warnings --env-file-if-exists=.env --watch server.js",
+    "practice": "node --no-warnings --env-file-if-exists=.env practice.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "express": "4.21.2",
+    "fast-xml-parser": "^4.5.1",
+    "socket.io": "4.8.1"
+  }
+}

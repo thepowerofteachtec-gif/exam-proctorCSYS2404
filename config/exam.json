@@ -1,0 +1,1089 @@
+{
+  "id": "csys2404-practice",
+  "title": "CSYS2404 Database Practice Exam",
+  "durationMinutes": 25,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "passphrase": "",
+  "instructions": "This is a practice test for the database course. Each attempt gives you 15 questions drawn at random from the question bank, in a shuffled order. You can retake it as many times as you like and will see your score at the end. Activity is logged. It submits automatically when time runs out.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is the best definition for Data Management?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The process of identifying effective and efficient methods of collecting, storing and retrieving data"
+        },
+        {
+          "id": "b",
+          "text": "The process of entering data into a database and ensuring that it has been validated"
+        },
+        {
+          "id": "c",
+          "text": "The process of normalizing a database to ensure efficient allocation of data"
+        },
+        {
+          "id": "d",
+          "text": "The process of creating an ERD and data dictionary and using it for logical design"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following terms are used to describe the characteristics of an entity EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Field"
+        },
+        {
+          "id": "b",
+          "text": "Attribute"
+        },
+        {
+          "id": "c",
+          "text": "Column"
+        },
+        {
+          "id": "d",
+          "text": "Record"
+        }
+      ],
+      "correct": "d"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is another term used for Record?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Table"
+        },
+        {
+          "id": "b",
+          "text": "Key"
+        },
+        {
+          "id": "c",
+          "text": "Field"
+        },
+        {
+          "id": "d",
+          "text": "Tuple"
+        }
+      ],
+      "correct": "d"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "points": 1,
+      "text": "Given a table EMPLOYEE (TRN, EName, NISNo, Salary), if TRN was underlined, what type of field would NISNo be?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Primary key"
+        },
+        {
+          "id": "b",
+          "text": "Foreign key"
+        },
+        {
+          "id": "c",
+          "text": "Candidate key"
+        },
+        {
+          "id": "d",
+          "text": "Composite key"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which term refers to a field in one table that is used to create a relationship with another table?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Foreign key"
+        },
+        {
+          "id": "b",
+          "text": "Indexed key"
+        },
+        {
+          "id": "c",
+          "text": "Link key"
+        },
+        {
+          "id": "d",
+          "text": "Primary key"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "points": 1,
+      "text": "What is the best description of a Non-Prime attribute?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attribute that forms part of the secondary key"
+        },
+        {
+          "id": "b",
+          "text": "Attribute that is not a part of the primary key"
+        },
+        {
+          "id": "c",
+          "text": "Attribute that is used to order the data in a table"
+        },
+        {
+          "id": "d",
+          "text": "Attribute whose value is unique"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is TRUE for a data type?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It determines the operations that may be performed on stored values"
+        },
+        {
+          "id": "b",
+          "text": "It is decomposable"
+        },
+        {
+          "id": "c",
+          "text": "It contains information about a particular entity"
+        },
+        {
+          "id": "d",
+          "text": "It is a set of symbols from a particular character set"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is an example of a composite key?",
+      "options": [
+        {
+          "id": "a",
+          "text": "TRN"
+        },
+        {
+          "id": "b",
+          "text": "Lastname"
+        },
+        {
+          "id": "c",
+          "text": "TRN, Lastname"
+        },
+        {
+          "id": "d",
+          "text": "Name"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is the best example of a primary key?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Student Name"
+        },
+        {
+          "id": "b",
+          "text": "Student Date of Birth"
+        },
+        {
+          "id": "c",
+          "text": "Student Id Number"
+        },
+        {
+          "id": "d",
+          "text": "Student Telephone Number"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is TRUE about the database approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The data resource is separate from the programs"
+        },
+        {
+          "id": "b",
+          "text": "Structural dependence"
+        },
+        {
+          "id": "c",
+          "text": "Data dependence"
+        },
+        {
+          "id": "d",
+          "text": "The focus is on procedures"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is an advantage of the database approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduced data redundancy"
+        },
+        {
+          "id": "b",
+          "text": "Increase in programming time"
+        },
+        {
+          "id": "c",
+          "text": "Uses less computer storage space"
+        },
+        {
+          "id": "d",
+          "text": "Structural dependence"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following protects the rights of the creators of written work such as computer programs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Copyright"
+        },
+        {
+          "id": "b",
+          "text": "Privacy"
+        },
+        {
+          "id": "c",
+          "text": "Intellectual property"
+        },
+        {
+          "id": "d",
+          "text": "Consent"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following was a problem of the traditional approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data independence"
+        },
+        {
+          "id": "b",
+          "text": "Takes up more computer storage space"
+        },
+        {
+          "id": "c",
+          "text": "Structural independence"
+        },
+        {
+          "id": "d",
+          "text": "Structural dependence"
+        }
+      ],
+      "correct": "d"
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following describes the situation in which a programmer needs to have knowledge of the physical representation of the data within a file in order to write code to manipulate the data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data dependence"
+        },
+        {
+          "id": "b",
+          "text": "Data independence"
+        },
+        {
+          "id": "c",
+          "text": "Structural dependence"
+        },
+        {
+          "id": "d",
+          "text": "Structural independence"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are features of the hierarchical database model EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Parent node can have any number of child nodes"
+        },
+        {
+          "id": "b",
+          "text": "Child node can have any number of parent nodes"
+        },
+        {
+          "id": "c",
+          "text": "Organizes the data in a tree-like structure"
+        },
+        {
+          "id": "d",
+          "text": "Root node does not have a parent node"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is a characteristic of an object-oriented database?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stores unstructured data"
+        },
+        {
+          "id": "b",
+          "text": "Stores data in tables with overlapping fields"
+        },
+        {
+          "id": "c",
+          "text": "Stores data as record types with parent-child relationships"
+        },
+        {
+          "id": "d",
+          "text": "Only stores data using a one-to-many relationship"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are features of an object-oriented database EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Overloading"
+        },
+        {
+          "id": "b",
+          "text": "Encapsulation"
+        },
+        {
+          "id": "c",
+          "text": "Inheritance"
+        },
+        {
+          "id": "d",
+          "text": "Polymorphism"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "points": 1,
+      "text": "In object-oriented databases there is the ability of an object to hide its internal representation from the program that uses it. What is this feature known as?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Encapsulation"
+        },
+        {
+          "id": "b",
+          "text": "Inheritance"
+        },
+        {
+          "id": "c",
+          "text": "Polymorphism"
+        },
+        {
+          "id": "d",
+          "text": "Information-hiding"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is the oldest database model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network"
+        },
+        {
+          "id": "b",
+          "text": "Relational"
+        },
+        {
+          "id": "c",
+          "text": "Object-oriented"
+        },
+        {
+          "id": "d",
+          "text": "Hierarchical"
+        }
+      ],
+      "correct": "d"
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which database model stores data in tables with overlapping attributes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Relational"
+        },
+        {
+          "id": "b",
+          "text": "Network"
+        },
+        {
+          "id": "c",
+          "text": "Hierarchical"
+        },
+        {
+          "id": "d",
+          "text": "Object-oriented"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "points": 1,
+      "text": "What database model would be most appropriate for a Groupware or a Multimedia database?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hierarchical"
+        },
+        {
+          "id": "b",
+          "text": "Object-oriented"
+        },
+        {
+          "id": "c",
+          "text": "Relational"
+        },
+        {
+          "id": "d",
+          "text": "Network"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are disadvantages of the hierarchical model EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Harder to secure than network model"
+        },
+        {
+          "id": "b",
+          "text": "Software dependence"
+        },
+        {
+          "id": "c",
+          "text": "Difficult to represent many-to-many relationships"
+        },
+        {
+          "id": "d",
+          "text": "Not flexible enough for ad-hoc queries"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "points": 1,
+      "text": "In order to access an insurance policy, a user may go through the insurance agent or the branch. Which database model that uses record types, would be most suitable?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network"
+        },
+        {
+          "id": "b",
+          "text": "Multi-dimensional"
+        },
+        {
+          "id": "c",
+          "text": "Relational"
+        },
+        {
+          "id": "d",
+          "text": "Hierarchical"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is a feature of the hierarchical model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Easily represents many-to-many relationships"
+        },
+        {
+          "id": "b",
+          "text": "Tree structured with a root record type"
+        },
+        {
+          "id": "c",
+          "text": "Structural independence"
+        },
+        {
+          "id": "d",
+          "text": "Stores many types of unstructured data"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are examples of DBMSes EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "MySQL"
+        },
+        {
+          "id": "b",
+          "text": "MS-Foxpro"
+        },
+        {
+          "id": "c",
+          "text": "Oracle"
+        },
+        {
+          "id": "d",
+          "text": "MS-Access"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q26",
+      "type": "mcq",
+      "points": 1,
+      "text": "What is the meaning of the abbreviation DML?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data Manipulation Language"
+        },
+        {
+          "id": "b",
+          "text": "Data Modification Language"
+        },
+        {
+          "id": "c",
+          "text": "Data Markup Language"
+        },
+        {
+          "id": "d",
+          "text": "Data Measurement Language"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q27",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is used to view or change data in a table?",
+      "options": [
+        {
+          "id": "a",
+          "text": "DRL"
+        },
+        {
+          "id": "b",
+          "text": "DSL"
+        },
+        {
+          "id": "c",
+          "text": "DDL"
+        },
+        {
+          "id": "d",
+          "text": "DML"
+        }
+      ],
+      "correct": "d"
+    },
+    {
+      "id": "q28",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following would you classify as DDL?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adding a record to a table"
+        },
+        {
+          "id": "b",
+          "text": "Removing a record from a table"
+        },
+        {
+          "id": "c",
+          "text": "Viewing data in a record"
+        },
+        {
+          "id": "d",
+          "text": "Creating a table"
+        }
+      ],
+      "correct": "d"
+    },
+    {
+      "id": "q29",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are functions common to most databases EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data dictionary"
+        },
+        {
+          "id": "b",
+          "text": "Program development"
+        },
+        {
+          "id": "c",
+          "text": "Queries"
+        },
+        {
+          "id": "d",
+          "text": "Data security"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q30",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which database model allows the storage of data in a format other than the typical tabular form, thus making data access faster?",
+      "options": [
+        {
+          "id": "a",
+          "text": "NoSQL"
+        },
+        {
+          "id": "b",
+          "text": "Relational"
+        },
+        {
+          "id": "c",
+          "text": "Hierarchical"
+        },
+        {
+          "id": "d",
+          "text": "Network"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q31",
+      "type": "mcq",
+      "points": 1,
+      "text": "In standard notation, how does one represent the primary key?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underline it"
+        },
+        {
+          "id": "b",
+          "text": "Put an asterisk in front of it"
+        },
+        {
+          "id": "c",
+          "text": "Bracket it"
+        },
+        {
+          "id": "d",
+          "text": "Put quotation marks around it"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q32",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following refers to creations of the mind?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Intellectual property"
+        },
+        {
+          "id": "b",
+          "text": "Copyright"
+        },
+        {
+          "id": "c",
+          "text": "Consent"
+        },
+        {
+          "id": "d",
+          "text": "Privacy"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q33",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are usual sources of data for a data broker EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Health records"
+        },
+        {
+          "id": "b",
+          "text": "Government records"
+        },
+        {
+          "id": "c",
+          "text": "Social networking sites"
+        },
+        {
+          "id": "d",
+          "text": "Purchase histories"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q34",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is an SQL-NoSQL injection attack?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The use of non-SQL and SQL attack strings in database queries"
+        },
+        {
+          "id": "b",
+          "text": "When a process tries to write large amounts of data to a fixed length block of memory"
+        },
+        {
+          "id": "c",
+          "text": "The use of non-SQL and SQL methods to backup and maintain a database"
+        },
+        {
+          "id": "d",
+          "text": "The use of malware to infiltrate a non-SQL or SQL database"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q35",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following help an organization keep their data secure EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "Employ a data misuse policy"
+        },
+        {
+          "id": "b",
+          "text": "Review access privileges periodically"
+        },
+        {
+          "id": "c",
+          "text": "Encrypt sensitive data"
+        },
+        {
+          "id": "d",
+          "text": "Have a database security plan"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q36",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is an example of informed consent?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Opt-in"
+        },
+        {
+          "id": "b",
+          "text": "In-and-out"
+        },
+        {
+          "id": "c",
+          "text": "Opt-about"
+        },
+        {
+          "id": "d",
+          "text": "Consent-in"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q37",
+      "type": "mcq",
+      "points": 1,
+      "text": "All of the following are examples of NoSQL databases EXCEPT",
+      "options": [
+        {
+          "id": "a",
+          "text": "MySQL"
+        },
+        {
+          "id": "b",
+          "text": "Cassandra"
+        },
+        {
+          "id": "c",
+          "text": "Redis"
+        },
+        {
+          "id": "d",
+          "text": "Mongo DB"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q38",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is a classification of NoSQL databases?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Document"
+        },
+        {
+          "id": "b",
+          "text": "Diagram"
+        },
+        {
+          "id": "c",
+          "text": "Primary key"
+        },
+        {
+          "id": "d",
+          "text": "Tabular"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q39",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is TRUE for the relational model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It can represent all types of relationships"
+        },
+        {
+          "id": "b",
+          "text": "Does not require a lot of planning for proper design"
+        },
+        {
+          "id": "c",
+          "text": "Structural dependence"
+        },
+        {
+          "id": "d",
+          "text": "Takes up very little storage space"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q40",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following are actions carried out on multi-dimensional databases in order to retrieve data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Roll-up, drill-down, slice, dice"
+        },
+        {
+          "id": "b",
+          "text": "Join, concat, merge, cube"
+        },
+        {
+          "id": "c",
+          "text": "Link, opt-in, opt-out, list"
+        },
+        {
+          "id": "d",
+          "text": "Cut, cube, concat, carve"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q41",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which function of a DBMS has to do with adding, removing or changing records?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data manipulation"
+        },
+        {
+          "id": "b",
+          "text": "Reports"
+        },
+        {
+          "id": "c",
+          "text": "Backup and recovery"
+        },
+        {
+          "id": "d",
+          "text": "Data security"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q42",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is a database object on which you place controls for taking actions or for entering, displaying, and editing data in fields?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Query"
+        },
+        {
+          "id": "b",
+          "text": "Form"
+        },
+        {
+          "id": "c",
+          "text": "Report"
+        },
+        {
+          "id": "d",
+          "text": "Database"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q43",
+      "type": "mcq",
+      "points": 1,
+      "text": "Which of the following is an advantage of NoSQL databases?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is a flexible data model with high performance"
+        },
+        {
+          "id": "b",
+          "text": "It is highly standardized between different products"
+        },
+        {
+          "id": "c",
+          "text": "The backup tools are mature enough to provide a complete solution"
+        },
+        {
+          "id": "d",
+          "text": "It is highly consistent"
+        }
+      ],
+      "correct": "a"
+    }
+  ],
+  "questionsPerAttempt": 15,
+  "allowRetakes": true,
+  "showScore": true
+}
