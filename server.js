@@ -19,6 +19,15 @@ app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 const now = () => Date.now();
+
+// Whether to reveal the score to the student. Hidden if the exam hides scores,
+// or if the attempt is heavily flagged (risk over hideScoreIfRiskOver).
+function scoreVisible(a) {
+  if (!examMod.exam.showScore) return false;
+  const thr = examMod.exam.hideScoreIfRiskOver;
+  if (typeof thr === 'number' && (a.risk_score || 0) > thr) return false;
+  return true;
+}
 const clientIp = req => (req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress || '').trim();
 const newToken = () => crypto.randomBytes(24).toString('hex');
 const slugId = s => String(s).trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9._-]/g, '').slice(0, 60);
@@ -127,7 +136,7 @@ app.post('/submit', (req, res) => {
   if (!a) return res.status(401).json({ error: 'Session expired.' });
   if (a.status === 'submitted') {
     return res.json({ done: true, allowRetakes: !!examMod.exam.allowRetakes,
-      ...(examMod.exam.showScore ? { score: a.score, max: a.max_score } : {}) });
+      ...(scoreVisible(a) ? { score: a.score, max: a.max_score } : {}) });
   }
   if (answers && typeof answers === 'object') {
     const cur = JSON.parse(a.answers);
@@ -137,7 +146,7 @@ app.post('/submit', (req, res) => {
   finalizeAttempt(a.id, 'student');
   const fresh = getAttemptByToken(token);
   const payload = { allowRetakes: !!examMod.exam.allowRetakes };
-  if (examMod.exam.showScore && fresh) { payload.score = fresh.score; payload.max = fresh.max_score; }
+  if (fresh && scoreVisible(fresh)) { payload.score = fresh.score; payload.max = fresh.max_score; }
   res.json(payload);
   pushOverview();
 });
@@ -211,6 +220,37 @@ app.get('/api/instructor/attempt/:id', requireInstructor, (req, res) => {
 });
 app.post('/api/instructor/force-submit/:id', requireInstructor, (req, res) => {
   finalizeAttempt(req.params.id, 'instructor'); res.json({ ok: true }); pushOverview();
+});
+
+// Reopen a student's attempt for a late/makeup sitting — fresh start, even in one-attempt mode.
+app.post('/api/instructor/reopen/:id', requireInstructor, (req, res) => {
+  const a = db.prepare('SELECT * FROM attempts WHERE id = ?').get(req.params.id);
+  if (!a) return res.status(404).json({ error: 'Not found.' });
+  const student = db.prepare('SELECT * FROM students WHERE id = ?').get(a.student_id);
+  const order = examMod.buildOrder();            // fresh draw/order
+  const started = now();
+  db.prepare(`UPDATE attempts SET status='in_progress', started_at=?, deadline=?, submitted_at=NULL,
+    submit_reason=NULL, question_order=?, answers='{}', flags='[]', timings='{}', current_q=0,
+    score=NULL, max_score=NULL, risk_score=0, last_seen=? WHERE id=?`)
+    .run(started, started + durationMs(student), JSON.stringify(order), started, a.id);
+  db.prepare('DELETE FROM events WHERE attempt_id = ?').run(a.id);
+  res.json({ ok: true });
+  pushOverview();
+});
+
+// Add minutes to one student's timer (accommodation / extra time), live if they're taking it.
+app.post('/api/instructor/extend/:id', requireInstructor, (req, res) => {
+  const mins = Math.max(1, Math.min(300, parseInt(req.body.minutes, 10) || 0));
+  const a = db.prepare('SELECT * FROM attempts WHERE id = ?').get(req.params.id);
+  if (!a) return res.status(404).json({ error: 'Not found.' });
+  const newDeadline = (a.deadline || now()) + mins * 60000;
+  db.prepare('UPDATE attempts SET deadline = ? WHERE id = ?').run(newDeadline, a.id);
+  db.prepare('UPDATE students SET extra_minutes = COALESCE(extra_minutes,0) + ? WHERE id = ?').run(mins, a.student_id);
+  // push the new deadline to the student's live page so their countdown updates immediately
+  const live = liveConnected.get(a.id);
+  if (live && live.socketId) io.to(live.socketId).emit('deadline', { deadline: newDeadline });
+  res.json({ ok: true, deadline: newDeadline, added: mins });
+  pushOverview();
 });
 
 // ---- Results export (replaces Canvas grade passback) ----
@@ -455,7 +495,7 @@ io.on('connection', socket => {
     if (a && a.status !== 'submitted') finalizeAttempt(a.id, 'student');
     const fresh = getAttemptByToken(token);
     const payload = { allowRetakes: !!examMod.exam.allowRetakes };
-    if (examMod.exam.showScore && fresh) { payload.score = fresh.score; payload.max = fresh.max_score; }
+    if (fresh && scoreVisible(fresh)) { payload.score = fresh.score; payload.max = fresh.max_score; }
     socket.emit('submitted', payload); pushOverview();
   });
   socket.on('student:heartbeat', ({ token }) => {

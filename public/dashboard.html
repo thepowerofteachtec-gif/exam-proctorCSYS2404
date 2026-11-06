@@ -177,11 +177,31 @@ async function loadDrawer(id) {
       ${recent.map(e => `<div class="flagitem" style="border-left-color:var(--line)">
         <span>${esc(e.label)}${e.qid ? ' · ' + e.qid : ''}</span><span class="t">${fmtTime(e.ts)}</span></div>`).join('') || '<div style="color:var(--faint);font-size:.85rem">No activity yet.</div>'}
 
-      ${a.status !== 'submitted' ? `<button class="btn danger" style="width:100%;margin-top:1.5rem" id="forceSubmit">Force submit</button>` : ''}
+      <div class="sechead">Exam controls</div>
+      ${a.status !== 'submitted' ? `<button class="btn danger" style="width:100%;margin-bottom:.6rem" id="forceSubmit">Force submit</button>` : ''}
+      ${a.status !== 'submitted' ? `<div style="display:flex;gap:.4rem;align-items:center;margin-bottom:.6rem">
+        <span style="font-size:.82rem;color:var(--muted)">Add time:</span>
+        <button class="btn ghost addmin" data-min="10" style="flex:1;padding:.5rem">+10m</button>
+        <button class="btn ghost addmin" data-min="15" style="flex:1;padding:.5rem">+15m</button>
+        <button class="btn ghost addmin" data-min="30" style="flex:1;padding:.5rem">+30m</button>
+      </div>` : ''}
+      <button class="btn ghost" style="width:100%" id="reopenBtn">Reopen for a late / makeup sitting</button>
+      <div style="font-size:.74rem;color:var(--faint);margin-top:.4rem">Reopen clears this student's answers and lets them sit fresh with full time — use for a makeup only.</div>
     </div>`;
   document.getElementById('closeD').onclick = () => { openId = null; drawer.classList.remove('open'); };
   const fs = document.getElementById('forceSubmit');
   if (fs) fs.onclick = async () => { await fetch('/api/instructor/force-submit/' + id + '?t=' + token, { method: 'POST' }); };
+  document.querySelectorAll('.addmin').forEach(b => b.onclick = async () => {
+    const mins = b.dataset.min;
+    await fetch('/api/instructor/extend/' + id + '?t=' + token, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ minutes: Number(mins) }) });
+    b.textContent = '+' + mins + 'm ✓'; setTimeout(() => loadDrawer(id), 800);
+  });
+  const rob = document.getElementById('reopenBtn');
+  if (rob) rob.onclick = async () => {
+    if (!window.confirm('Reopen for a makeup? This clears this student\'s current answers and flags and lets them sit the exam again with full time.')) return;
+    await fetch('/api/instructor/reopen/' + id + '?t=' + token, { method: 'POST' });
+    setTimeout(() => loadDrawer(id), 600);
+  };
   const rb = document.getElementById('reportBtn');
   if (rb) rb.onclick = () => window.open('/api/instructor/report/' + id + '?t=' + token, '_blank');
   const resp = document.getElementById('respBtn');

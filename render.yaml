@@ -1,19 +1,17 @@
-# Render Blueprint — PAID (Starter) plan, always-on, with a saved-data disk.
-# Use this for real/graded exams so results are never lost.
-# (Free-plan version: change `plan: starter` back to `plan: free` and remove the disk block.)
+# Render Blueprint — CSYS2404, PAID (Starter) plan, always-on, saved-data disk.
 services:
   - type: web
     name: exam-proctor-csys2404
     runtime: node
-    plan: starter            # ~$7/mo, always-on (no sleeping)
+    plan: starter
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: INSTRUCTOR_PW
-        sync: false          # Render asks you to type this when you deploy
+        sync: false
       - key: DB_PATH
         value: /var/data/exam.db
     disk:
       name: exam-data
-      mountPath: /var/data   # results database lives here and survives restarts
+      mountPath: /var/data
       sizeGB: 1

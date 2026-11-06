@@ -1,11 +1,15 @@
 {
-  "id": "csys2404-practice",
-  "title": "CSYS2404 Database Practice Exam",
-  "durationMinutes": 25,
+  "id": "csys2404-exam",
+  "title": "CSYS2404 Database Examination",
+  "durationMinutes": 30,
+  "questionsPerAttempt": 25,
   "shuffleQuestions": true,
   "shuffleOptions": true,
+  "allowRetakes": false,
+  "showScore": true,
+  "hideScoreIfRiskOver": 20,
   "passphrase": "",
-  "instructions": "This is a practice test for the database course. Each attempt gives you 15 questions drawn at random from the question bank, in a shuffled order. You can retake it as many times as you like and will see your score at the end. Activity is logged. It submits automatically when time runs out.",
+  "instructions": "Answer all questions. You have ONE attempt. Each answer locks the moment you select it, and you cannot return to a previous question. Activity is logged for academic integrity. The exam submits automatically when time runs out.",
   "questions": [
     {
       "id": "q1",
@@ -1082,8 +1086,5 @@
       ],
       "correct": "a"
     }
-  ],
-  "questionsPerAttempt": 15,
-  "allowRetakes": true,
-  "showScore": true
+  ]
 }
